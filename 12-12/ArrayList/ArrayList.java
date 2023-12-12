@@ -100,6 +100,7 @@ public class ArrayList implements IList{
         // 1. 判断数组是否为空 如果为空不能删除
         if (size == 0) {
             System.out.println("数组为空 不能删除");
+            return;
         }
         // 2. 找到删除位置下标
         int index = -1;
