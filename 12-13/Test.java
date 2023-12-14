@@ -43,30 +43,30 @@
 // }
 
 2. 杨辉三角
-// class Solution {
-//     public List<List<Integer>> generate(int numRows) {
-//         List<List<Integer>> retArray = new ArrayList<>();
+class Solution {
+    public List<List<Integer>> generate(int numRows) {
+        List<List<Integer>> retArray = new ArrayList<>();
         
-//         // 提前插入第一行
-//         List<Integer> firstRow = new ArrayList<>(); 
-//         firstRow.add(1);
-//         retArray.add(firstRow);
+        // 提前插入第一行
+        List<Integer> firstRow = new ArrayList<>(); 
+        firstRow.add(1);
+        retArray.add(firstRow);
 
-//         for (int i = 1;i < numRows;i++) {            
-//             List<Integer> array = new ArrayList<>(); 
-//             // 处理头
-//             array.add(1);
-//             // 处理中间
-//             for (int j = 1;j < i;j++) {
-//                 List<Integer> lastRow = retArray.get(i-1);// 得到上一行
-//                 array.add(lastRow.get(j-1)+lastRow.get(j));                
-//             }
-//             // 处理尾
-//             array.add(1);
-//             retArray.add(i,array);
-//         }
-//         return retArray;
-//     }
-// }
+        for (int i = 1;i < numRows;i++) {            
+            List<Integer> array = new ArrayList<>(); 
+            // 处理头
+            array.add(1);
+            // 处理中间
+            for (int j = 1;j < i;j++) {
+                List<Integer> lastRow = retArray.get(i-1);// 得到上一行
+                array.add(lastRow.get(j-1)+lastRow.get(j));                
+            }
+            // 处理尾
+            array.add(1);
+            retArray.add(i,array);
+        }
+        return retArray;
+    }
+}
 
 3. 牌游戏
