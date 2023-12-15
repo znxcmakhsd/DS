@@ -54,8 +54,7 @@ public class MySingleList implements IList{
     @Override
     public void addFirst(int data) {
         ListNode node = new ListNode(data);
-        ListNode next = this.head;
-        node.next = next;
+        node.next = this.head;
         this.head = node;
     }
 
@@ -100,6 +99,7 @@ public class MySingleList implements IList{
         ListNode prev = this.head;
         while (index - 1 != 0) {
             prev = prev.next;
+            index--;
         }
         listNode.next = prev.next;
         prev.next = listNode;
@@ -119,7 +119,6 @@ public class MySingleList implements IList{
                     this.head = cur.next;
                 }else {
                     prev.next = cur.next;
-                    cur = cur.next;
                 }
                 // 只删除一次
                 break;
@@ -147,8 +146,8 @@ public class MySingleList implements IList{
                     this.head = cur.next;
                 }else {
                     prev.next = cur.next;
-                    cur = cur.next;
                 }
+                cur = cur.next;
             }else {
                 prev = cur;
                 cur = cur.next;
